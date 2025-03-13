@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos - Sistema de Reservas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        nav {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .payment-history {
+            margin-top: 30px;
+        }
+        .payment-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="reservas.html">Reservar Cita</a>
+            <a href="calendario.html">Calendario</a>
+            <a href="perfil.html">Mi Perfil</a>
+            <a href="pagos.html">Pagos</a>
+        </nav>
+
+        <h1>Pagos</h1>
+
+        <form id="pagoForm">
+            <div class="form-group">
+                <label for="monto">Monto a pagar:</label>
+                <input type="number" id="monto" name="monto" required readonly value="50.00">
+            </div>
+
+            <div class="form-group">
+                <label for="metodo">Método de pago:</label>
+                <select id="metodo" name="metodo" required>
+                    <option value="">Seleccione método de pago</option>
+                    <option value="tarjeta">Tarjeta de crédito/débito</option>
+                    <option value="transferencia">Transferencia bancaria</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+            </div>
+
+            <div id="tarjetaDetails" class="form-group">
+                <label for="numeroTarjeta">Número de tarjeta:</label>
+                <input type="text" id="numeroTarjeta" name="numeroTarjeta" placeholder="1234 5678 9012 3456">
+
+                <label for="fechaVencimiento">Fecha de vencimiento:</label>
+                <input type="text" id="fechaVencimiento" name="fechaVencimiento" placeholder="MM/AA">
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123">
+            </div>
+
+            <button type="submit">Procesar Pago</button>
+        </form>
+
+        <div class="payment-history">
+            <h2>Historial de Pagos</h2>
+            <div class="payment-item">
+                <p><strong>Fecha:</strong> 05 Oct 2023</p>
+                <p><strong>Monto:</strong> $50.00</p>
+                <p><strong>Concepto:</strong> Consulta General</p>
+                <p><strong>Estado:</strong> Completado</p>
+            </div>
+            <div class="payment-item">
+                <p><strong>Fecha:</strong> 28 Sep 2023</p>
+                <p><strong>Monto:</strong> $75.00</p>
+                <p><strong>Concepto:</strong> Revisión</p>
+                <p><strong>Estado:</strong> Completado</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Cita - Sistema de Reservas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        nav {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="reservas.html">Reservar Cita</a>
+            <a href="calendario.html">Calendario</a>
+            <a href="perfil.html">Mi Perfil</a>
+            <a href="pagos.html">Pagos</a>
+        </nav>
+
+        <h1>Reservar Cita</h1>
+
+        <form id="reservaForm">
+            <div class="form-group">
+                <label for="servicio">Tipo de Servicio:</label>
+                <select id="servicio" name="servicio" required>
+                    <option value="">Seleccione un servicio</option>
+                    <option value="consulta">Consulta General</option>
+                    <option value="revision">Revisión</option>
+                    <option value="tratamiento">Tratamiento</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora" required>
+            </div>
+
+            <div class="form-group">
+                <label for="notas">Notas adicionales:</label>
+                <textarea id="notas" name="notas" rows="4"></textarea>
+            </div>
+
+            <button type="submit">Confirmar Reserva</button>
+        </form>
+    </div>
+</body>
+</html>
